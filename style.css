@@ -73,3 +73,13 @@ html{
     font-weight: 600;
     margin-left: 10px;
 }
+
+#viewProjects2:hover{
+    border: solid #ffffffa6 5px;
+    color: #ffffffa6;
+}
+
+#viewProjects:hover{
+    border: solid #ffffffa6 5px;
+    color: #ffffffa6;
+}
