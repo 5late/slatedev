@@ -1,0 +1,75 @@
+html{
+    background-color: #192c35e8;
+    color: #c9d5e0;
+}
+
+#techhead{
+    top: 6em;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+#pfp{
+    width: 100%;
+    position: relative;
+    top: 4em;
+    display: flex;
+    justify-content: center;
+}
+
+#profilePicture{
+    width: 17em;
+    border-radius: 50%;
+    box-shadow: 4px 4px 20px 12px #00000052;
+}
+
+#btnDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 6em;
+}
+
+#viewProjects{
+    border: solid #0000002a 5px;
+    background: transparent;
+    width: 350px;
+    font-size: 4vh;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 8px;
+    font-family: 'Mandali';
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+#statDiv{
+    width: 100%;
+    position: relative;
+    top: 5em;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+#statCard{
+    width: 22em;
+    box-shadow: 1px 15px 20px 15px #00000050;
+}
+
+#viewProjects2{
+    border: solid #0000002a 5px;
+    background: transparent;
+    width: 350px;
+    font-size: 4vh;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 8px;
+    font-family: 'Mandali';
+    font-weight: 600;
+    margin-left: 10px;
+}
