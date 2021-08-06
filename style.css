@@ -1,3 +1,7 @@
+* {
+    text-decoration: none;
+}
+
 html{
     background-color: #192c35e8;
     color: #c9d5e0;
@@ -90,4 +94,22 @@ html{
     justify-content: center;
     align-items: center;
     font-size: 2em;
+}
+
+#healthcare {
+    text-decoration: none;
+    color: #c9d5e0;
+}
+
+.button{
+    border: solid #0000002a 5px;
+    background: transparent;
+    width: 350px;
+    font-size: 4vh;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 8px;
+    font-family: 'Mandali';
+    font-weight: 600;
+    margin: 20px;
 }
