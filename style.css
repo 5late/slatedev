@@ -113,3 +113,10 @@ html{
     font-weight: 600;
     margin: 20px;
 }
+
+.text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
