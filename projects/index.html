@@ -46,4 +46,9 @@
         <p class='text'>HealthCare API was the backend API for the July 2021 xdHacks Mini Toronto Hackathon that I participated in. <a href="">Read More</a></p>
     </div>
 </body>
+<script>
+    var queries = new URLSearchParams(document.location.search.substring(1))
+    var sent_from = queries.get('sf')
+    console.log(sent_from)
+</script>
 </html>
