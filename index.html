@@ -37,18 +37,21 @@
         var sent_from_full = 'discord'
     }else if (sent_from == 'ig'){
         var sent_from_full = 'instagram'
-    } else if (sent_from == 'rdm' || sent_from == 'rnd'){
+    } else {
         var sent_from_full = 'random'
     }
     window.onload = POSTtoURL()
     fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data =>{console.log(data, sent_from)})
     function POSTtoURL(){
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", 'https://api.slatedev.xyz:12443/api/webstat/v1/post/sf', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
         var obj = {}
         obj[sent_from_full] = 1
-        xhr.send(JSON.stringify(obj));
+
+        fetch("https://api.slatedev.xyz:12443/api/webstat/v1/post/sf", {
+        method: "POST", 
+        body: JSON.stringify(obj)
+        }).then(res => {
+        console.log("Request complete! response:", res);
+        });
     }
 </script>
 </html>
