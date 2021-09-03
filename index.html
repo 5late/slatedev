@@ -40,15 +40,28 @@
     } else {
         var sent_from_full = 'random'
     }
-    window.onload = POSTtoURL()
-    fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data =>{console.log(data, sent_from)})
-    function POSTtoURL(){
-        var obj = {}
-        obj[sent_from_full] = 1
+    var obj = {}
+    obj[sent_from_full] = 1
+    window.onload = doStart()
 
-        fetch("https://api.slatedev.xyz:12443/api/webstat/v1/post/sf", {
+    async function doStart(){
+        await getIP()
+        POSTtoURL('ips', new_data)
+    }
+
+    async function getIP() {
+        await fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data =>{console.log(data, sent_from)
+        new_data = {
+            ip: data
+        }
+        POSTtoURL('ips', new_data)
+    })
+    }
+
+    function POSTtoURL(url, data){
+        fetch(`https://api.slatedev.xyz:12443/api/webstat/v1/post/${url}`, {
         method: "POST", 
-        body: JSON.stringify(obj)
+        body: JSON.stringify(data)
         }).then(res => {
         console.log("Request complete! response:", res);
         });
