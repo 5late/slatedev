@@ -49,6 +49,7 @@
     async function doStart(){
         await getIP()
         POSTtoURL('ips', new_data)
+        POSTtoURL('sf', obj)
     }
 
     async function getIP() {
