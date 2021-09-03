@@ -3,7 +3,7 @@
 }
 
 html{
-    background-color: #192c35e8;
+    background-color: #093952e8;
     color: #c9d5e0;
 }
 
@@ -33,6 +33,7 @@ html{
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     position: relative;
     top: 6em;
 }
@@ -47,7 +48,6 @@ html{
     padding: 8px;
     font-family: 'Mandali';
     font-weight: 600;
-    margin-right: 10px;
 }
 
 #statDiv{
@@ -75,7 +75,6 @@ html{
     padding: 8px;
     font-family: 'Mandali';
     font-weight: 600;
-    margin-left: 10px;
 }
 
 #viewProjects2:hover{
