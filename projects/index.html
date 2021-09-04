@@ -53,18 +53,37 @@
         var sent_from_full = 'discord'
     }else if (sent_from == 'ig'){
         var sent_from_full = 'instagram'
-    } else if (sent_from == 'rdm' || sent_from == 'rnd'){
+    }else if (sent_from == 'gh'){
+        var sent_from_full = 'github'
+    } else {
         var sent_from_full = 'random'
     }
-    window.onload = POSTtoURL()
-    fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data =>{console.log(data, sent_from)})
-    function POSTtoURL(){
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", 'https://api.slatedev.xyz:12443/api/webstat/v1/post/sf', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        var obj = {}
-        obj[sent_from_full] = 1
-        xhr.send(JSON.stringify(obj));
+    var obj = {}
+    obj[sent_from_full] = 1
+    window.onload = doStart()
+
+    async function doStart(){
+        await getIP()
+        POSTtoURL('ips', new_data)
+        POSTtoURL('sf', obj)
+    }
+
+    async function getIP() {
+        await fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data =>{console.log(data, sent_from)
+        new_data = {
+            IP: data.ip
+        }
+        POSTtoURL('ips', new_data)
+    })
+    }
+
+    function POSTtoURL(url, data){
+        fetch(`https://api.slatedev.xyz:12443/api/webstat/v1/post/${url}`, {
+        method: "POST", 
+        body: JSON.stringify(data)
+        }).then(res => {
+        console.log("Request complete! response:", res);
+        });
     }
 </script>
 </html>
