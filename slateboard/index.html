@@ -84,9 +84,9 @@
     }
     #char_count{
         position: absolute;
-        top: 93vh;
-        left: 90vw;
-        color: yellow;
+        top: 95vh;
+        left: 96vw;
+        color: #cece00;
     }
 </style>
 <body>
@@ -106,6 +106,7 @@
         var textArea = document.getElementById('mainText')
         textArea.style.backgroundColor = '#062d38'
         fillBoard(text)
+        textArea.style.color = '#f1ff73'
     }
 
     function fillBoard(id){
@@ -116,7 +117,8 @@
             title.value = data.title
         })
         var save = document.getElementById('save')
-        save.textContent = 'Save Edited Board'
+        save.textContent = 'Share Board'
+        save.setAttribute("onclick", "javascript: getCurrentLink()")
         save.style.width = '15vw'
     }
 
@@ -131,6 +133,10 @@
     if (queries.get('t')){
         var textArea = document.getElementById('mainText')
         textArea.style.backgroundColor = '#0a4455'
+        textArea.style.color = '#d8d8d8'
+        var save = document.getElementById('save')
+        save.textContent = 'Save Edited Board'
+        save.setAttribute("onclick", "javascript: getContent()")
     }
     if (e.which == 9) {
         e.preventDefault();
@@ -159,6 +165,10 @@
         var char_count = document.getElementById('char_count')
         var chars_left = 50000 - length
         char_count.innerText = chars_left
+    }
+
+    function getCurrentLink(){
+        navigator.clipboard.writeText(window.location.href)
     }
 
     async function getContent(){
