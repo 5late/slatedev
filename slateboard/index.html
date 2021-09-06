@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Slateboard</title>
+</head>
+<style>
+    body{
+        background-color: #0a4455;
+    }
+    #mainText, #mainText:focus{
+        position: absolute;
+        width: 98%;
+        height: 90%;
+        background-color: #0a4455;
+        color: #d8d8d8;
+        border: none;
+        outline: none;
+    }
+    #save{
+        position: absolute;
+        top: 90vh;
+    }
+</style>
+<body>
+    <textarea name="Main Board" id="mainText" maxlength="50000" spellcheck="false" placeholder="Enter text here..."></textarea>
+    <button onclick="getContent()" id="save">Save</button>
+</body>
+<script>
+    var queries = new URLSearchParams(document.location.search.substring(1))
+    var text = queries.get('t')
+
+    if(queries.get('t')){
+        fillBoard(text)
+    }
+
+    function fillBoard(id){
+        fetch(`http://localhost:12345/api/slateboard/v1/get/text/${id}`).then(response => response.json()).then(data => {
+            var textArea = document.getElementById('mainText')
+            textArea.value = data.maintext
+            textArea.readOnly = true
+        })
+    }
+
+    //credit: HasteBin
+    document.querySelector('textarea').addEventListener('keydown', function (e) {
+    if (e.which == 9) {
+        e.preventDefault();
+            if (document.selection){
+                this.focus(), document.selection.createRange().text = "  ", this.focus();
+            } else if (this.selectionStart || "0" == this.selectionStart) {
+                var e = this.selectionStart,
+                o = this.selectionEnd,
+                n = this.scrollTop;
+                this.value = this.value.substring(0, e) + "  " + this.value.substring(o, this.value.length), this.focus(), this.selectionStart = e + "  ".length, this.selectionEnd = e + "  ".length, this.scrollTop = n
+            } else { 
+                this.value += "  ", this.focus()
+            }
+        }
+    });
+
+    async function getContent(){
+        var textArea = document.getElementById('mainText')
+        console.log(textArea.value)
+        var seconds = Math.round(new Date().getTime() / 1000);
+        console.log(seconds)
+
+        await fetch(`http://localhost:12345/api/slateboard/v1/post/text`, {
+            method: "POST", 
+            body: JSON.stringify({maintext: textArea.value, ticks: seconds})
+            }).then(res => res.json()).then(async data => {
+                console.log("Request complete! response:", data);
+                await new Promise(r => setTimeout(r, 2000));
+                fetch(`http://localhost:12345/api/slateboard/v1/get/text/${data.ticks}`).then(response => response.json()).then(data => {
+                    console.log(data)
+                    navigator.clipboard.writeText(`127.0.0.1:5500/index.html?t=${data.ticks}`)
+                })
+            });
+        }
+</script>
+</html>
