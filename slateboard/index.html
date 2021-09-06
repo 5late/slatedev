@@ -218,6 +218,9 @@
 
     function getCurrentLink(){
         navigator.clipboard.writeText(window.location.href)
+        var popup = document.getElementById('popup')
+        popup.classList.remove('hide')
+        popup.classList.add('show')
     }
 
     async function getContent(){
