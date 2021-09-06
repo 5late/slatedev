@@ -42,7 +42,7 @@
     }
     #title{
         position: absolute;
-        width: 10vw;
+        width: 98%;
         background: none;
         color: none;
         border: none;
@@ -82,14 +82,21 @@
         text-align: center;
         font-size: 1.1em;
     }
+    #char_count{
+        position: absolute;
+        top: 93vh;
+        left: 90vw;
+        color: yellow;
+    }
 </style>
 <body>
-    <input type="text" id="title" placeholder="Enter title here...">
+    <input type="text" id="title" placeholder="Enter title here..." maxlength="100">
     <textarea name="Main Board" id="mainText" maxlength="50000" spellcheck="false" placeholder="Enter text here..."></textarea>
     <button onclick="getContent()" id="save">Save</button>
     <div id="popup" class="hide">
         <p>Copied URL to clipboard!</p>
     </div>
+    <span id="char_count"></span>
 </body>
 <script>
     var queries = new URLSearchParams(document.location.search.substring(1))
@@ -107,7 +114,7 @@
             title.value = data.title
         })
         var save = document.getElementById('save')
-        save.textContent = 'Save New Board'
+        save.textContent = 'Save Edited Board'
         save.style.width = '15vw'
     }
 
@@ -126,7 +133,15 @@
                 this.value += "  ", this.focus()
             }
         }
+        updateCharCount(this.value)
     });
+
+    function updateCharCount(str){
+        var length = str.length
+        var char_count = document.getElementById('char_count')
+        var chars_left = 50000 - length
+        char_count.innerText = chars_left
+    }
 
     async function getContent(){
         var textArea = document.getElementById('mainText')
@@ -145,7 +160,7 @@
             body: JSON.stringify({title: title_value, maintext: textArea.value, ticks: seconds})
             }).then(res => res.json()).then(async data => {
                 console.log("Request complete! response:", data);
-                await new Promise(r => setTimeout(r, 500));
+                await new Promise(r => setTimeout(r, 250));
                 fetch(`https://api.slatedev.xyz/api/slateboard/v1/get/text/${data.ticks}`).then(response => response.json()).then(data => {
                     console.log(data)
                     navigator.clipboard.writeText(`https://slatedev.xyz/board/?t=${data.ticks}`)
