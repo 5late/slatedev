@@ -246,6 +246,7 @@
                 fetch(`https://api.slatedev.xyz/api/slateboard/v1/get/text/${data.ticks}`).then(response => response.json()).then(data => {
                     console.log(data)
                     navigator.clipboard.writeText(`https://slatedev.xyz/board/?t=${data.ticks}`)
+                    document.location.href = `https://slatedev.xyz/board?t=${data.ticks}`
                     $('meta[property=og\\:url]').attr('content',`https://slatedev.xyz/board/?t=${data.ticks}`);
                     var popup = document.getElementById('popup')
                     popup.classList.remove('hide')
