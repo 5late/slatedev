@@ -103,6 +103,8 @@
     var text = queries.get('t')
 
     if(queries.get('t')){
+        var textArea = document.getElementById('mainText')
+        textArea.style.backgroundColor = '#062d38'
         fillBoard(text)
     }
 
@@ -126,6 +128,10 @@
 
     //credit: HasteBin
     document.querySelector('textarea').addEventListener('keydown', function (e) {
+    if (queries.get('t')){
+        var textArea = document.getElementById('mainText')
+        textArea.style.backgroundColor = '#0a4455'
+    }
     if (e.which == 9) {
         e.preventDefault();
             if (document.selection){
