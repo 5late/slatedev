@@ -103,6 +103,8 @@
         fetch(`https://api.slatedev.xyz/api/slateboard/v1/get/text/${id}`).then(response => response.json()).then(data => {
             var textArea = document.getElementById('mainText')
             textArea.value = data.maintext
+            var title = document.getElementById('title')
+            title.value = data.title
         })
         var save = document.getElementById('save')
         save.textContent = 'Save New Board'
