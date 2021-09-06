@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta content="Slateboard" property="og:title">
+    <meta content="Send up to 50,000 characters at a time with an unique URL." property="og:description">
+    <meta content="https://slatedev.xyz/board" property="og:url">
     <title>Slateboard</title>
 </head>
 <style>
@@ -12,19 +15,31 @@
     }
     #mainText, #mainText:focus{
         position: absolute;
+        top: 5vh;
         width: 98%;
-        height: 90%;
+        height: 85%;
         background-color: #0a4455;
         color: #d8d8d8;
         border: none;
         outline: none;
+        font-size: 1.2em;
     }
     #save{
         position: absolute;
         top: 90vh;
     }
+    #title{
+        position: absolute;
+        width: 10vw;
+        background: none;
+        color: none;
+        border: none;
+        outline: none;
+        font-size: 1.3em;
+    }
 </style>
 <body>
+    <input type="text" id="title" placeholder="Enter title here...">
     <textarea name="Main Board" id="mainText" maxlength="50000" spellcheck="false" placeholder="Enter text here..."></textarea>
     <button onclick="getContent()" id="save">Save</button>
 </body>
