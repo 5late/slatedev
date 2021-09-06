@@ -100,6 +100,13 @@
     <span id="char_count"></span>
 </body>
 <script>
+    window.onload = async function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        await new Promise(r => setTimeout(r, 250));
+        document.location.reload();
+        }
+    }
     var queries = new URLSearchParams(document.location.search.substring(1))
     var text = queries.get('t')
 
@@ -110,9 +117,10 @@
         textArea.style.color = '#f1ff73'
     }
 
-    function fillBoard(id){
+    async function fillBoard(id){
         var title = document.getElementById('title')
         var title_value = title.value
+        console.log(title.value)
         $('meta[property=og\\:title]').attr('content', `Slateboard - ${title_value}`);
         $('meta[property=og\\:url]').attr('content',`https://slatedev.xyz/board/?t=${id}`);
         fetch(`https://api.slatedev.xyz/api/slateboard/v1/get/text/${id}`).then(response => response.json()).then(data => {
