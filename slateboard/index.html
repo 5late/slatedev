@@ -75,7 +75,7 @@
                 await new Promise(r => setTimeout(r, 500));
                 fetch(`https://api.slatedev.xyz/api/slateboard/v1/get/text/${data.ticks}`).then(response => response.json()).then(data => {
                     console.log(data)
-                    navigator.clipboard.writeText(`https://slatedev.xyz/board/index.html?t=${data.ticks}`)
+                    navigator.clipboard.writeText(`https://slatedev.xyz/board/?t=${data.ticks}`)
                 })
             });
         }
