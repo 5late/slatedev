@@ -120,7 +120,6 @@
     async function fillBoard(id){
         var title = document.getElementById('title')
         var title_value = title.value
-        console.log(title.value)
         $('meta[property=og\\:title]').attr('content', `Slateboard - ${title_value}`);
         $('meta[property=og\\:url]').attr('content',`https://slatedev.xyz/board/?t=${id}`);
         fetch(`https://api.slatedev.xyz/api/slateboard/v1/get/text/${id}`).then(response => response.json()).then(data => {
