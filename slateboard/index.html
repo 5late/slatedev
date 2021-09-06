@@ -128,13 +128,19 @@
 
     async function getContent(){
         var textArea = document.getElementById('mainText')
+        var title = document.getElementById('title')
+        if (title.value == ''){
+            var title_value = 'New Board'
+        } else {
+            var title_value = title.value
+        }
         console.log(textArea.value)
         var seconds = Math.round(new Date().getTime() / 1000);
         console.log(seconds)
 
         await fetch(`https://api.slatedev.xyz/api/slateboard/v1/post/text`, {
             method: "POST", 
-            body: JSON.stringify({maintext: textArea.value, ticks: seconds})
+            body: JSON.stringify({title: title_value, maintext: textArea.value, ticks: seconds})
             }).then(res => res.json()).then(async data => {
                 console.log("Request complete! response:", data);
                 await new Promise(r => setTimeout(r, 500));
