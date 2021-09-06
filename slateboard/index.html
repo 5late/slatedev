@@ -8,6 +8,7 @@
     <meta content="Send up to 50,000 characters at a time with an unique URL." property="og:description">
     <meta content="https://slatedev.xyz/board" property="og:url">
     <title>Slateboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <style>
     body{
@@ -179,6 +180,8 @@
         } else {
             var title_value = title.value
         }
+        
+        $('meta[property=og\\:title]').attr('content', `Slateboard - ${title_value}`);
         console.log(textArea.value)
         var seconds = Math.round(new Date().getTime() / 1000);
         console.log(seconds)
@@ -192,6 +195,7 @@
                 fetch(`https://api.slatedev.xyz/api/slateboard/v1/get/text/${data.ticks}`).then(response => response.json()).then(data => {
                     console.log(data)
                     navigator.clipboard.writeText(`https://slatedev.xyz/board/?t=${data.ticks}`)
+                    $('meta[property=og\\:url]').attr('content',`https://slatedev.xyz/board/?t=${data.ticks}`);
                     var popup = document.getElementById('popup')
                     popup.classList.remove('hide')
                     popup.classList.add('show')
