@@ -49,11 +49,47 @@
         outline: none;
         font-size: 1.3em;
     }
+    .hide{
+        display: none;
+        position: absolute;
+        top: 110vh;
+        left: 80vw;
+    }
+    .show{
+        display: block;
+        animation: fade-in 1s;
+    }
+    @keyframes fade-in{
+        0%{
+            opacity: 0%;
+            position: absolute;
+            top: 110vh;
+        }
+        100%{
+            opacity: 100%;
+            position: absolute;
+            top: 93vh;
+        }
+    }
+    #popup{
+        position: absolute;
+        top: 93vh;
+        left: 80vw;
+        width: 15vw;
+        color: #f37575;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.1em;
+    }
 </style>
 <body>
     <input type="text" id="title" placeholder="Enter title here...">
     <textarea name="Main Board" id="mainText" maxlength="50000" spellcheck="false" placeholder="Enter text here..."></textarea>
     <button onclick="getContent()" id="save">Save</button>
+    <div id="popup" class="hide">
+        <p>Copied URL to clipboard!</p>
+    </div>
 </body>
 <script>
     var queries = new URLSearchParams(document.location.search.substring(1))
@@ -67,7 +103,6 @@
         fetch(`https://api.slatedev.xyz/api/slateboard/v1/get/text/${id}`).then(response => response.json()).then(data => {
             var textArea = document.getElementById('mainText')
             textArea.value = data.maintext
-            textArea.readOnly = true
         })
         var save = document.getElementById('save')
         save.textContent = 'Save New Board'
@@ -106,6 +141,9 @@
                 fetch(`https://api.slatedev.xyz/api/slateboard/v1/get/text/${data.ticks}`).then(response => response.json()).then(data => {
                     console.log(data)
                     navigator.clipboard.writeText(`https://slatedev.xyz/board/?t=${data.ticks}`)
+                    var popup = document.getElementById('popup')
+                    popup.classList.remove('hide')
+                    popup.classList.add('show')
                 })
             });
         }
