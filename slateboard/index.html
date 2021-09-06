@@ -172,6 +172,17 @@
         }
     });
 
+    document.querySelector('input').addEventListener('keydown', function (e) {
+        if (queries.get('t')){
+            var textArea = document.getElementById('mainText')
+            textArea.style.backgroundColor = '#0a4455'
+            textArea.style.color = '#d8d8d8'
+            var save = document.getElementById('save')
+            save.textContent = 'Save Edited Board'
+            save.setAttribute("onclick", "javascript: getContent()")
+        }
+    })
+
     function updateCharCount(str){
         var length = str.length
         var char_count = document.getElementById('char_count')
