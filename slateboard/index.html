@@ -89,11 +89,30 @@
         left: 96vw;
         color: #cece00;
     }
+    #home{
+        position: absolute;
+        display: none;
+        top: 92vh;
+        left: 14em;
+        width: 6em;
+        height: 2em;
+        background: none;
+        border-radius: 10px;
+        font-size: 1.5em;
+        border-color: #ffffff;
+        color: #d8d8d8;
+    }
+    #home:hover{
+        background-color: #c7c7c7;
+        color: #1d1d1d;
+        cursor: pointer;
+    }
 </style>
 <body>
     <input type="text" id="title" placeholder="Enter title here..." maxlength="100">
     <textarea name="Main Board" id="mainText" maxlength="50000" spellcheck="false" placeholder="Enter text here..."></textarea>
     <button onclick="getContent()" id="save">Save</button>
+    <a href="https://slatedev.xyz/board"><button id="home">Home</button></a>
     <div id="popup" class="hide">
         <p>Copied URL to clipboard!</p>
     </div>
@@ -115,6 +134,8 @@
         textArea.style.backgroundColor = '#062d38'
         fillBoard(text)
         textArea.style.color = '#f1ff73'
+        var home = document.getElementById('home')
+        home.style.display = 'block'
     }
 
     async function fillBoard(id){
