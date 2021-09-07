@@ -3,7 +3,7 @@
 }
 
 html{
-    background-color: #093952e8;
+    background-color: #014237fa;
     color: #c9d5e0;
 }
 
@@ -111,6 +111,11 @@ html{
     font-family: 'Mandali';
     font-weight: 600;
     margin: 20px;
+}
+
+.button:hover{
+    background-color: #014237;
+    border-color: #00000040;
 }
 
 .text {
