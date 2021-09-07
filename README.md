@@ -4,4 +4,7 @@
 
 This git repository hosts the files for [my website](https://me.slatedev.xyz).
 
-As of right now (8/4/2021), this hosts files for https://me.slatedev.xyz only.
+### Updates
+
+- As of (8/4/2021), this repo hosts files for https://me.slatedev.xyz only.
+- As of (9/7/2021), this repo also hosts files for https://slatedev.xyz/board as well.
