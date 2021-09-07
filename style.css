@@ -145,3 +145,47 @@ html{
     text-decoration: underline;
     text-decoration-thickness: 2px;
 }
+
+.link:hover{
+    text-decoration: none;
+}
+
+#thoughtcontainer{
+    display: flex;
+    justify-content: center;
+}
+
+#thoughts{
+    position: absolute;
+    top: 110vh;
+    width: 70em;
+    height: 50em;
+    border-radius: 20px;
+    margin-bottom: 12em;
+    background-color: #1d1d1d;
+    display: flex;
+    justify-content: center;
+}
+
+#slate{
+    position: absolute;
+    top: 200vh;
+}
+
+#aboutme{
+    position: absolute;
+    top: 6em;
+    left: 10em;
+    width: 15em;
+    height: 10em;
+    display: flex;
+    justify-content: center;
+    border: white solid 2px ;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.content{
+    position: absolute;
+    top: 2.5em;
+}
