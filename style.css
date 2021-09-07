@@ -7,6 +7,12 @@ html{
     color: #c9d5e0;
 }
 
+@media only screen and (max-device-width: 575px){
+    .submiddle{
+        text-align: center;
+    }
+}
+
 #techhead{
     top: 6em;
     display: flex;
