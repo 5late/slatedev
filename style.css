@@ -134,6 +134,7 @@ html{
 }
 
 .link{
+    color: #9ad3d3;
     text-decoration: underline;
     text-decoration-thickness: 2px;
 }
