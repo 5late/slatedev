@@ -278,3 +278,8 @@ html{
     border-radius: 15px;
     padding: 5px;
 }
+
+#serverMaintain{
+    position: absolute;
+    top: 3.9em;
+}
