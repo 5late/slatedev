@@ -235,12 +235,15 @@ html{
 }
 
 .ilink{
+    position: relative;
     text-decoration: none;
-    color: white;
+    color: #ffffff49;
+    top: 0;
+    transition: top ease 0.5s;
 }
 
 .ilink:hover{
-    color: #ffe7bb;
-    transform: translateY(-1);
+    color: #ffffff;
+    top: -7px;
     transition: all 300ms ease-in;
 }
