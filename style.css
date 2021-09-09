@@ -16,28 +16,19 @@ html{
         top: 130vh !important;
         width: 100% !important;
         height: 150vh !important;
+        display: flex;
+        justify-content: center;
     }
     #slate{
         position: absolute;
         top: 290vh !important;
     }
     #gif{
-        position: relative;
         top: 80vh !important;
-        left: 3em !important;
     }
     #links{
         width: 100% !important;
         top: 130vh!important;
-    }
-    #aboutme{
-        left: 3.5em !important;
-    }
-    #workingOn{
-        left: 3.5em !important;
-    }
-    #projectsMaintain{
-        left: 3.5em !important;
     }
 }
 
