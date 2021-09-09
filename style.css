@@ -250,7 +250,7 @@ html{
 
 #workingOn{
     position: absolute;
-    top: 16em;
+    top: 17em;
     left: 5em;
     width: 15em;
     height: 6em;
@@ -264,4 +264,17 @@ html{
 #slateboard{
     position: relative;
     top: 1em;
+}
+
+#projectsMaintain{
+    position: absolute;
+    top: 26em;
+    left: 5em;
+    width: 15em;
+    height: 8em;
+    display: flex;
+    justify-content: center;
+    border: white solid 2px ;
+    border-radius: 15px;
+    padding: 5px;
 }
