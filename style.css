@@ -208,6 +208,7 @@ html{
 .content{
     position: absolute;
     top: 2.5em;
+    font-family: Barlow;
 }
 
 #gif{
@@ -234,6 +235,7 @@ html{
     position: absolute;
     top: -1em;
     padding: 5px;
+    font-family: Oswald;
 }
 
 #links{
@@ -284,6 +286,7 @@ html{
 #slateboard{
     position: relative;
     top: 1em;
+    font-family: Barlow;
 }
 
 #projectsMaintain{
@@ -302,6 +305,7 @@ html{
 #serverMaintain{
     position: absolute;
     top: 3.9em;
+    font-family: Barlow;
 }
 
 .home{
