@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Buzz Off.</h1>
+    <p>Write your angry rant here:</p>
+    <textarea name="response" id="response" cols="40" rows="15" maxlength="500"></textarea>
+    <br>
+    <button onclick="SendtoMe()">Send</button>
+</body>
+<script>
+    function SendtoMe(){
+        var response = document.getElementById('response').value 
+        console.log(response)
+    }
+</script>
+</html>
