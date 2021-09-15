@@ -8,10 +8,15 @@
 </head>
 <body>
     <h1>Buzz Off.</h1>
-    <p>Write your angry rant here:</p>
-    <textarea name="response" id="response" cols="40" rows="15" maxlength="500"></textarea>
-    <br>
-    <button onclick="SendtoMe()">Send</button>
+    <details>
+        <summary>Click here</summary>
+        <p>Whine here:</p>
+        <textarea name="response" id="response" cols="40" rows="15" maxlength="500"></textarea>
+        <br>
+        <button onclick="SendtoMe()">Send*</button>
+        <br>
+        <small>*I may read it. I may not.</small>
+    </details>
 </body>
 <script>
     var ip;
@@ -22,7 +27,7 @@
             console.log(ip)
         })
         await fetch(`http://localhost:12345/api/web/v1/post/rant`, {
-            method: "POST", 
+            method: "POST",
             body: JSON.stringify({ip: ip, rant: response})
             }).then(res => res.json()).then(async data => {
                 console.log(data)
