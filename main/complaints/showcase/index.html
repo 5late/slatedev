@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rant Showcase LOL</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center;">
+    <textarea name="rant" id="rant" cols="100" rows="20" readonly></textarea>
+    <h3 id="time" style="position:absolute; top: 20em;"></h3>
+</body>
+<script>
+    var queries = new URLSearchParams(document.location.search.substring(1))
+    var content = queries.get('c')
+    var time_query = queries.get('t')
+    console.log(time_query)
+    
+    var rant_space = document.getElementById('rant')
+    var time_header = document.getElementById('time')
+
+    if (!content){
+        rant_space.value = "Nothing to see here"
+        time_header.innerHTML = "<a href='https://slatedev.xyz/complaints'>Go here, since you want to snoop.</a>"
+    } else {
+        rant_space.value = content
+        time_header.innerText = "Received at: " + new Date(time_query * 1000)
+    }
+</script>
+</html>
