@@ -22,6 +22,9 @@
     var ip;
     async function SendtoMe(){
         var response = document.getElementById('response').value
+        if (response.length > 3){
+            return
+        }
         await fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data => {
             ip = data.ip
             console.log(ip)
