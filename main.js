@@ -15,17 +15,15 @@ window.onload = doStart()
 
 async function doStart(){
     await getIP()
-    POSTtoURL('ips', new_data)
     POSTtoURL('sf', obj)
 }
 
 async function getIP() {
-    await fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data =>{console.log(data, sent_from)
-    new_data = {
-        IP: data.ip
-    }
-    POSTtoURL('ips', new_data)
-})
+    fetch('https://api.slatedev.xyz/api/webstat/v1/head/ips', {
+        method: "HEAD"
+    }).then(res => {
+        console.log("HEAD Request successful. Response: ", res)
+    })
 }
 
 function POSTtoURL(url, data){
