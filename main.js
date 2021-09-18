@@ -19,7 +19,7 @@ async function doStart(){
 }
 
 async function getIP() {
-    fetch('https://api.slatedev.xyz/api/webstat/v1/head/ips', {
+    fetch('https://api.slatedev.xyz/api/webstat/v1/head/ip', {
         method: "HEAD"
     }).then(res => {
         console.log("HEAD Request successful. Response: ", res)
@@ -27,7 +27,7 @@ async function getIP() {
 }
 
 function POSTtoURL(url, data){
-    fetch(`https://api.slatedev.xyz:12443/api/webstat/v1/post/${url}`, {
+    fetch(`https://api.slatedev.xyz/api/webstat/v1/post/${url}`, {
     method: "POST", 
     body: JSON.stringify(data)
     }).then(res => {
