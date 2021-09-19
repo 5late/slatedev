@@ -1,0 +1,52 @@
+body{
+    background-color: #0e1414;
+    overflow: hidden;
+}
+
+@media only screen and (max-device-width: 575px){
+    #header{
+        font-size: 3em !important;
+    }
+}
+
+#headerHolder{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#header{
+    position: relative;
+    top: -3em;
+    color: white;
+    font-family: 'Luckiest Guy';
+    font-size: 4em;
+}
+
+#buttonHolder{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.button{
+    background: none;
+    color: white;
+    outline: none;
+    border-radius: 10px;
+    width: 6em;
+    height: 3em;
+    font-size: 1.5em;
+    margin: 20px;
+}
+
+.button:hover{
+    background-color: white;
+    color: black;
+}
