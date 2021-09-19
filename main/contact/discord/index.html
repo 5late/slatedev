@@ -9,7 +9,16 @@
 </head>
 <body>
     <div id="holder">
-        <h1 id="main">Slate#7879</h1>
+        <h1 id="main" onclick="copy()">Slate#7879</h1>
     </div>
 </body>
+<script>
+    async function copy(){
+        navigator.clipboard.writeText('Slate#7879')
+        let button = document.getElementById('main')
+        button.innerText = 'Copied to clipboard!'
+        await new Promise(r => setTimeout(r, 1500));
+        button.innerText = 'Slate#7879'
+    }
+</script>
 </html>
