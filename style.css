@@ -11,6 +11,7 @@ html{
     .submiddle{
         text-align: center;
     }
+
     #thoughts{
         position: absolute;
         top: 130vh !important;
@@ -19,16 +20,21 @@ html{
         display: flex;
         justify-content: center;
     }
+    
     #slate{
         position: absolute;
-        top: 290vh !important;
+        top: 290% !important;
     }
+
     #gif{
         top: 80vh !important;
+        margin: auto !important;
     }
+
     #links{
         width: 100% !important;
         top: 130vh!important;
+        padding: 2px !important;
     }
 }
 
