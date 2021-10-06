@@ -25,13 +25,9 @@
         if (response.length < 3){
             return
         }
-        await fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data => {
-            ip = data.ip
-            console.log(ip)
-        })
         await fetch('https://api.slatedev.xyz/api/web/v1/post/rant', {
             method: "POST",
-            body: JSON.stringify({ip: ip, rant: response})
+            body: JSON.stringify({ip: '127.0.0.1', rant: response})
             }).then(res => res.json()).then(async data => {
                 console.log(data)
             });
