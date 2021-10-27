@@ -226,7 +226,7 @@
     }
 
     function getCurrentLink(){
-        navigator.clipboard.writeText(window.location.href)
+        navigator.clipboard.writeText((window.location.href - '#loaded'))
         var popup = document.getElementById('popup')
         popup.classList.remove('hide')
         popup.classList.add('show')
