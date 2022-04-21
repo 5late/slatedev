@@ -1,0 +1,50 @@
+/* Smooth Scroll */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Background Color */
+
+body {
+    background-color: #020814;
+}
+
+/* Profile Picture */
+
+.pfp {
+    position: relative;
+    width: 35%;
+    height: 35%;
+    border-radius: 50%;
+}
+
+/* Profile Picture Placement */
+
+#pfp-holder {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Stat Card */
+
+.stat-card {
+    position: relative;
+    height: 20%;
+}
+
+/* Stat Card Placement */
+
+#stat-holder {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    left: 50%;
+}
