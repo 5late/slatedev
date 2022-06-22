@@ -15,3 +15,5 @@ fetch(file).then(response => response.text()).then(data => {
 	document.getElementById('song').innerText = text_line_split[2]
 })
 }
+
+randomLyric()
