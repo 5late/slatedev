@@ -49,3 +49,12 @@ body {
     right: 10px;
     font-size: 1.2em;
 }
+
+#insta{
+    position: absolute;
+    font-family: 'Bebas Neue';
+    color: #f7e1b5;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1.2em;
+}
