@@ -1,0 +1,44 @@
+a, a:focus {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-image: url('2.jpg');
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.slate-holder {
+    position: absolute;
+    left: 25%;
+    top: 20%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.slate {
+    font-size: 12em;
+    font-family: 'Monoton';
+    color: #ffff99;
+    text-shadow: -10px -5px black;
+}
+
+.github-holder {
+    position: absolute;
+    left: 55%;
+    top: 19%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.github {
+    font-size: 10em;
+    color: #009999;
+    text-shadow: -2px 2px #000;
+}
